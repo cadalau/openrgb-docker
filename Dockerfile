@@ -16,5 +16,6 @@ COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 
 RUN sudo apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools kmod
 RUN sudo apt-get -y install build-essential
-RUN sudo git clone https://gitlab.com/CalcProgrammer1/OpenRGB && cd OpenRGB && sudo git submodule update --init --recursive && sudo qmake OpenRGB.pro && sudo make -j8
+RUN sudo git clone git@gitlab.com:GaryPate/OpenRGB.git && cd OpenRGB && sudo git submodule update --init --recursive && sudo qmake OpenRGB.pro && sudo make -j8
 CMD ["bash", "dockerrun.sh"]
+
