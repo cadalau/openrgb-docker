@@ -1,3 +1,0 @@
-#!/bin/bash
-docker run --name orgbc --privileged --net=host -e DISPLAY=:0 --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules orgb
-
