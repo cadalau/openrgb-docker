@@ -1,6 +1,7 @@
 FROM debian:buster-slim
 
 ENV INSTALL_PATH openrgb_docker
+ENV HOME=/root
 WORKDIR $INSTALL_PATH
 RUN apt-get update
 
