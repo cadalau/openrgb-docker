@@ -22,8 +22,6 @@ RUN sudo chmod -R 777 /root/
 RUN sudo apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools kmod
 RUN sudo apt-get -y install build-essential
 RUN sudo echo "${SSH_SECRET}" > /root/.ssh/id_docker
-RUN sudo git clone https://gitlab.com/GaryPate/OpenRGB.git && cd OpenRGB && sudo git submodule update --init --recursive
-RUN sudo qmake OpenRGB/OpenRGB.pro
-RUN sudo make OpenRGB/ -j8
+RUN sudo git clone https://gitlab.com/GaryPate/OpenRGB.git && cd OpenRGB && sudo git submodule update --init --recursive && sudo qmake OpenRGB.pro && sudo make -j8
 CMD ["bash", "dockerrun.sh"]
 
