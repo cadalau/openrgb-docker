@@ -26,6 +26,6 @@ RUN sudo git clone https://gitlab.com/GaryPate/OpenRGB.git && cd OpenRGB && sudo
 WORKDIR /OpenRGB
 RUN sudo qmake OpenRGB.pro
 WORKDIR /OpenRGB
-RUN sudo make -j8
+RUN sudo make
 CMD ["bash", "dockerrun.sh"]
 
