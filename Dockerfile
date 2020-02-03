@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:buster
 
 ARG SSH_SECRET
 
