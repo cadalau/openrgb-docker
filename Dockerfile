@@ -24,6 +24,8 @@ RUN sudo apt-get -y install build-essential libseccomp2
 RUN sudo echo "${SSH_SECRET}" > /root/.ssh/id_docker
 RUN sudo git clone https://gitlab.com/GaryPate/OpenRGB.git && cd OpenRGB && sudo git submodule update --init --recursive
 WORKDIR /OpenRGB
-RUN sudo qmake OpenRGB.pro && sudo make
+RUN sudo cmake OpenRGB.pro
+WORKDIR /OpenRGB
+RUN sudo make -j8
 CMD ["bash", "dockerrun.sh"]
 
