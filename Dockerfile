@@ -1,11 +1,11 @@
-FROM debian:buster
+FROM debian:buster-slim
 
 ARG SSH_SECRET
 
 
 #ENV INSTALL_PATH openrgb_docker
 #WORKDIR $INSTALL_PATH
-WORKDIR /root
+#WORKDIR /root
 RUN apt-get update
 
 RUN apt-get -y install sudo
