@@ -1,6 +1,6 @@
 #FROM debian:jessie
 #FROM ubuntu:18.04
-FROM phusion/baseimage:18.04
+FROM phusion/baseimage
 
 #ARG SSH_SECRET
 
