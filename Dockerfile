@@ -1,6 +1,8 @@
 #FROM debian:jessie
 #FROM ubuntu:18.04
-FROM phusion/baseimage
+#FROM phusion/baseimage
+FROM x11docker/fvwm
+ARG DISPLAY
 
 #ARG SSH_SECRET
 
@@ -29,7 +31,7 @@ RUN apt-get update
 # CMD ["bash", "dockerrun.sh"]
 
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
-RUN mkdir /root/.ssh/
+#RUN mkdir /root/.ssh/
 #RUN chown -R docker /root/
 #RUN sudo chmod -R 777 /root/
 RUN apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools kmod build-essential libgl1-mesa-dev libseccomp2
