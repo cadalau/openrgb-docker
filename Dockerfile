@@ -1,7 +1,8 @@
 #FROM debian:jessie
 #FROM ubuntu:18.04
 #FROM phusion/baseimage
-FROM x11docker/fvwm
+#FROM x11docker/fvwm
+FROM x11docker/gnome
 ARG DISPLAY
 
 #ARG SSH_SECRET
