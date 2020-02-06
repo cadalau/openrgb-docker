@@ -7,9 +7,6 @@ FROM jlesage/baseimage-gui:ubuntu-18.04
 # Install xterm.
 RUN add-pkg xterm
 
-# Copy the start script.
-COPY startapp.sh /startapp.sh
-
 # Set the name of the application.
 ENV APP_NAME="Xterm"
 
@@ -18,8 +15,6 @@ ENV APP_NAME="Xterm"
 #ARG DISPLAY
 
 RUN apt-get update
-
-
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 
 RUN apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools kmod build-essential libgl1-mesa-dev libseccomp2
