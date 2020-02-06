@@ -1,5 +1,5 @@
 #FROM debian:jessie
-#FROM ubuntu:18.04
+FROM ubuntu:18.04
 
 # Pull base image.
 #FROM jlesage/baseimage-gui:ubuntu-18.04
@@ -29,4 +29,5 @@ RUN qmake OpenRGB.pro
 RUN make
 EXPOSE 5920
 CMD ["bash", "dockerrun.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 
