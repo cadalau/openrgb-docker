@@ -15,6 +15,10 @@ FROM ubuntu:18.04
 #FROM x11docker/deepin
 #ARG DISPLAY
 
+ENV TZ=Australia/Sydney
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+
 RUN apt-get update
 WORKDIR /root
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
