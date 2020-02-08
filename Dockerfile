@@ -7,7 +7,7 @@ FROM ubuntu:18.04
 ENV TZ=Australia/Sydney
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update
+RUN apt-get update --fix-missing
 WORKDIR /root
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
