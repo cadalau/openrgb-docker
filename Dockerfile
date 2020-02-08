@@ -24,7 +24,7 @@ WORKDIR /root
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
-RUN apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools build-essential libgl1-mesa-dev libseccomp2 x11vnc xvfb python-dev
+RUN apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools build-essential libgl1-mesa-dev libseccomp2 x11vnc xvfb python
 RUN git clone https://gitlab.com/GaryPate/OpenRGB.git && cd OpenRGB && git submodule update --init --recursive
 RUN git clone https://github.com/novnc/noVNC && ln -s /root/noVNC/vnc_lite.html /root/noVNC/index.html
 RUN git clone https://github.com/novnc/websockify
