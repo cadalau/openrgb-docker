@@ -1,5 +1,6 @@
 #FROM debian:jessie
-FROM ubuntu:18.04
+FROM python:3.7-buster
+#ubuntu:18.04
 
 # Pull base image.
 #FROM jlesage/baseimage-gui:ubuntu-18.04
@@ -24,7 +25,7 @@ WORKDIR /root
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
-RUN apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools build-essential libgl1-mesa-dev libseccomp2 x11vnc xvfb python
+RUN apt -y install git qt5-default libusb-1.0-0-dev libhidapi-dev i2c-tools build-essential libgl1-mesa-dev libseccomp2 x11vnc xvfb
 RUN git clone https://gitlab.com/GaryPate/OpenRGB.git && cd OpenRGB && git submodule update --init --recursive
 RUN git clone https://github.com/novnc/noVNC && ln -s /root/noVNC/vnc_lite.html /root/noVNC/index.html
 RUN git clone https://github.com/novnc/websockify
